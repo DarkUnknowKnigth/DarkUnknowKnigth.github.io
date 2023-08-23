@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISC Jose Daniel Morales Ocampo</title>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script> 
+</head>
+<body>
+  <style>
+    html.lenis {
+      height: auto;
+    }
+    
+    .lenis.lenis-smooth {
+      scroll-behavior: auto;
+    }
+    
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+    
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+    
+    .lenis.lenis-scrolling iframe {
+      pointer-events: none;
+    }
+  </style>
+  <main>
+    <h1>Hola mundo</h1>
+  </main>
+  <script>
+    const lenis = new Lenis()
+    lenis.on('scroll', (e) => {
+      console.log(e)
+    });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  </script>
+</body>
+</html>
