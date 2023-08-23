@@ -5,32 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ISC Jose Daniel Morales Ocampo</title>
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script> 
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <style>
-    html.lenis {
-      height: auto;
-    }
-    
-    .lenis.lenis-smooth {
-      scroll-behavior: auto;
-    }
-    
-    .lenis.lenis-smooth [data-lenis-prevent] {
-      overscroll-behavior: contain;
-    }
-    
-    .lenis.lenis-stopped {
-      overflow: hidden;
-    }
-    
-    .lenis.lenis-scrolling iframe {
-      pointer-events: none;
-    }
-  </style>
   <main>
-    <h1>Hola mundo</h1>
+    <nav class="flex md:flex-row  flex-col justify-between items-center gap-5 px-10 py-10">
+      <a href="#inicio">
+        <img src="./public/images/logo.png" alt="logo" class="h-20">
+      </a>
+      <ul class="flex bold flex-col md:flex-row  gap-5 max-w-7xl mx-auto items-center justify-between nav-links text-secondary">
+        <li><a href="#about">Sobre mi</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#tech">Tenologías</a></li>
+        <li><a href="#articles">Articulos</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+      <a href="#contacto" class="bg-primary hover:bg-white hover:text-gray-900 hover:border hover:border-primary text-white px-4 py-4 rounded-lg font-bold uppercase">Contactar</a>
+    </nav>
+    <div class="max-w-7xl mx-auto">
+      <div class="w-full rounded-lg hero flex flex-col items-center justify-center text-white">
+        <div class="flex flex-col gap-y-5 items-center justify-center ">
+          <h2 class="md:text-7xl text-4xl font-bold animate__animated animate__jackInTheBox animate__delay-2s">
+            ISC. Daniel Morales
+          </h2>
+          <small class="md:text-lg text-md text-white font-bold">
+            <a href="#">
+              Desarrollador de software
+            </a>
+          </small>
+          <button class="bg-primary hover:bg-secondary  hover:border hover:border-white text-white px-4 py-4 rounded-lg font-bold uppercase">Ver proyectos</button>
+        </div>
+      </div>
+    </div>
   </main>
+  <section class="font-bold max-w-7xl my-10 mx-auto">
+    <div class="md:flex-row gap-5 flex-col flex">
+      <img src="./public/images/bussines.jpg" alt="bussines" class="w-1/2 rounded-lg animate__animated animate__rollIn">
+      <div class="flex flex-col gap-5 items-center justify-center text-secondary">
+        <span class="tex-xl text-primary">Negocios Inteligentes</span>
+        <p class="md:text-4xl text-xl text-justify">
+          Crece con tu negocio, ofreciendo puntos de venta en linea, medios de contacto epecilizado, software a la medida y experiencias de usuario autonomas.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="font-bold max-w-7xl my-10 mx-auto" id="about">
+    <div class="md:flex-row gap-10 flex-col flex items-center justify-center">
+      <div class="flex flex-col gap-5 text-center items-center">
+        <small>Sobre mi (yo merengues)</small>
+        <code lang="javascript">
+          { Nombre: Jose Daniel Morales Ocampo }
+        </code>
+        <p class="text-justify text-xl">
+          Soy un desarrollador de software chiapaneco, con experiencia en el sector de gobierno y privado. Me especializo en la creacion de sistemas de informacion y aplicaciones moviles progresivas.Soy una persona emprendedora que siempre esta en busca de nuevos retos.Tengo experiencia en la puesta en marcha de proyectos en diferentes entornos de produccion web y locales. Experiencia en la creacion de contenido y branding para tu empresa.‍
+        </p>
+  
+      </div>
+      <img class="w-1/3 rounded-lg" src="./public/images/profile_md.png" alt="profile">
+    </div>
+  </section>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#dc3897',
+            secondary: '#122B92',
+          }
+        }
+      }
+    }
+  </script>
   <script>
     const lenis = new Lenis()
     lenis.on('scroll', (e) => {
