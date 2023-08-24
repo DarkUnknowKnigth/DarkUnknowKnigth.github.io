@@ -4,11 +4,17 @@
 @font-face 
   font-family: "Roboto-bold"
   src: url("./public/fonts/Roboto/Roboto-Bold.ttf") format("truetype")
+@import url('https://fonts.cdnfonts.com/css/impact')
+@font-face 
+  font-family: 'Impact', sans-serif
+  font-family: 'Impacted', sans-serif
+h1,h2,h3,button,a
+  font-family: "Impact"
+  letter-spacing: 1px
 body
-  font-family: "Roboto"
-  color: #122B92
+  font-family: 'Roboto'
 .bold
-  font-family: "Roboto-bold"
+  font-family: "Impact"
 html.lenis 
   height: auto
 
@@ -32,9 +38,10 @@ html.lenis
 .hero
   background-image: url('./public/images/hero.jpg')
   width: 100%
-  height: 400px
+  height: 600px
   background-position: center
   background-size: cover
-
+main, section
+  height: 90vh !important
 .btn
   @apply bg-primary hover:bg-white hover:text-gray-900 hover:border hover:border-primary text-white px-4 py-4 rounded-lg font-bold uppercase

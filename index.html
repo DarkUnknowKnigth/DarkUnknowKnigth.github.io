@@ -3,70 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ISC Jose Daniel Morales Ocampo</title>
+  <title>ISC JOSE DANIEL MORALES OCAMPO</title>
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script> 
   <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+  <script src="https://kit.fontawesome.com/75983717f0.js" crossorigin="anonymous"></script>
+  <script src="./app.js"></script>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <main>
-    <nav class="flex md:flex-row  flex-col justify-between items-center gap-5 px-10 py-10">
-      <a href="#inicio">
-        <img src="./public/images/logo.png" alt="logo" class="h-20">
-      </a>
-      <ul class="flex bold flex-col md:flex-row  gap-5 max-w-7xl mx-auto items-center justify-between nav-links text-secondary">
-        <li><a href="#about">Sobre mi</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#tech">Tenologías</a></li>
-        <li><a href="#articles">Articulos</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-      <a href="#contacto" class="bg-primary hover:bg-white hover:text-gray-900 hover:border hover:border-primary text-white px-4 py-4 rounded-lg font-bold uppercase">Contactar</a>
-    </nav>
+  <nav class="sticky top-0 bg-white shadow-lg mb-10 flex md:flex-row mx-auto flex-col justify-between items-center gap-5 px-10 py-4 z-40">
+    <a href="#inicio">
+      <img src="./public/images/logo.png" alt="logo" class="h-20">
+    </a>
+    <ul class="flex bold flex-col md:flex-row  gap-5 max-w-7xl mx-auto items-center justify-between nav-links text-secondary">
+      <li><a href="#about">Sobre mi</a></li>
+      <li><a href="#projects">Proyectos</a></li>
+      <li><a href="#tech">Tenologías</a></li>
+      <li><a href="#articles">Articulos</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+    <a href="#contacto" class="bg-primary hover:bg-white hover:text-gray-900 hover:border hover:border-primary text-white px-4 py-4 rounded-lg font-bold uppercase">Contactar</a>
+  </nav>
+  <main class="mt-10">
     <div class="max-w-7xl mx-auto">
       <div class="w-full rounded-lg hero flex flex-col items-center justify-center text-white">
         <div class="flex flex-col gap-y-5 items-center justify-center ">
-          <h2 class="md:text-7xl text-4xl font-bold animate__animated animate__jackInTheBox animate__delay-2s">
-            ISC. Daniel Morales
+          <h2 class="md:text-7xl text-4xl font-bold animate__animated animate__jackInTheBox animate__delay-1s">
+            ISC. JOSE DANIEL MORALES OCAMPO
           </h2>
           <small class="md:text-lg text-md text-white font-bold">
             <a href="#">
               Desarrollador de software
             </a>
           </small>
-          <button class="bg-primary hover:bg-secondary  hover:border hover:border-white text-white px-4 py-4 rounded-lg font-bold uppercase">Ver proyectos</button>
+          <a class="bg-primary hover:bg-secondary hover:border hover:border-white text-white px-4 py-4 rounded-lg font-bold uppercase" href="#projects">Ver proyectos</a>
         </div>
       </div>
     </div>
   </main>
-  <section class="font-bold max-w-7xl my-10 mx-auto">
+  <section class="font-bold max-w-7xl mt-10 mx-auto">
     <div class="md:flex-row gap-5 flex-col flex">
       <img src="./public/images/bussines.jpg" alt="bussines" class="w-1/2 rounded-lg animate__animated animate__rollIn">
-      <div class="flex flex-col gap-5 items-center justify-center text-secondary">
-        <span class="tex-xl text-primary">Negocios Inteligentes</span>
-        <p class="md:text-4xl text-xl text-justify">
+      <div class="flex flex-col gap-5 items-center justify-center p-4">
+        <h2 class="text-4xl text-primary">Negocios Inteligentes</h2>
+        <p class="md:text-2xl text-xl text-justify">
           Crece con tu negocio, ofreciendo puntos de venta en linea, medios de contacto epecilizado, software a la medida y experiencias de usuario autonomas.
         </p>
+        <a href="mailto://jose-daniel-97@hotmail.com" class="flex gap-5 items-center bg-primary hover:bg-white hover:text-gray-900 hover:border hover:border-primary text-white px-4 py-4 rounded-lg font-bold uppercase">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="#fff" height="1em" viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+          Contactar
+        </a>
       </div>
     </div>
   </section>
   <section class="font-bold max-w-7xl my-10 mx-auto" id="about">
     <div class="md:flex-row gap-10 flex-col flex items-center justify-center">
       <div class="flex flex-col gap-5 text-center items-center">
-        <small>Sobre mi (yo merengues)</small>
-        <code lang="javascript">
-          { Nombre: Jose Daniel Morales Ocampo }
+        <h2 class="text-primary text-4xl">Sobre mi</h2>
+        <code lang="javascript" class="p-4 bg-secondary text-left rounded-lg shadow-lg text-primary w-full text-xl">
+          {
+            <div class="px-4">
+              <br>
+              nombre: <b class="text-yellow-500">"Jose Daniel Morales Ocampo"</b>,
+              <br>
+              descripcion: 
+              <b class="text-xl text-yellow-500">
+                "Soy un desarrollador de software chiapaneco, con experiencia en el sector de gobierno y privado. 
+                <br> Me especializo en la creacion de sistemas de informacion y aplicaciones moviles progresivas.
+                <br>Soy una persona emprendedora que siempre esta en busca de nuevos retos.
+                <br>Tengo experiencia en la puesta en marcha de proyectos en diferentes entornos de produccion web y locales. 
+                <br>Experiencia en la creacion de contenido y branding para tu empresa.‍"
+              </b>
+              <br>
+            </div> 
+          }
         </code>
-        <p class="text-justify text-xl">
-          Soy un desarrollador de software chiapaneco, con experiencia en el sector de gobierno y privado. Me especializo en la creacion de sistemas de informacion y aplicaciones moviles progresivas.Soy una persona emprendedora que siempre esta en busca de nuevos retos.Tengo experiencia en la puesta en marcha de proyectos en diferentes entornos de produccion web y locales. Experiencia en la creacion de contenido y branding para tu empresa.‍
-        </p>
-  
       </div>
-      <img class="w-1/3 rounded-lg" src="./public/images/profile_md.png" alt="profile">
+      <div class="flex flex-col gap-5 w-1/3" x-data="media()">
+        <div class="flex gap-5 flex-row">
+          <template x-for="(social, index) in socials" :key="index">
+            <span>
+              <span x-html="social.svg"></span>
+              <a :href="social.url" x-text="social.name"></a>
+            </span>
+          </template>
+        </div>
+        <img class="w-full rounded-lg" src="./public/images/profile_md.png" alt="profile">
+      </div>
+    </div>
+  </section>
+  <section class="font-bold max-w-7xl my-10 mx-auto" id="projects">
+    <div class="flex flex-col">
+      <h2 class="text-primary text-4xl">Proyectos</h2>
+      <p class="text-xl py-4">
+        Cuento con experiencia en de trabajo en diversos frameworks y tecnologias. Los mas destacados son Laravel, NestJS, Ionic, Angular, Flask, Alpine.js, Tailwindcss, LeafletJS entre otros.Trabajo con la tecnologia adecuada al entorno y presupuesto de los clientes la herramienta correcta para el trabajo indicado, he realizado configuraciones de entornos linux como Ubuntu, Centos, Mint y Administradores como PLESK, Cpanel ademas de integrando procesos de CD/CD como github webhooks, Docker. Desarrollando arquitecturas orientadas a microservicios. Tembien cuento con experiencia en integracion de pasarelas de pago como Conekta, MercadoPago, Openpay, STP entre otras librerias.
+      </p>
+    </div>
+    <h3 class="text-primary text-3xl">Cartera de proyectos</h3>
+    <div class="grid grid-cols-4 md:grid-cols-2">
+      <template x-for="project in projects">
+        
+      </template>
     </div>
   </section>
   <script>
@@ -84,7 +126,6 @@
   <script>
     const lenis = new Lenis()
     lenis.on('scroll', (e) => {
-      console.log(e)
     });
     function raf(time) {
       lenis.raf(time);
