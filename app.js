@@ -26,6 +26,44 @@ function media(){
         url: 'https://open.spotify.com/user/danyelmacho97',
         svg: '<svg class="bg-primary p-2 rounded-lg h-10 w-10" fill="#fff" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm100.7 364.9c-4.2 0-6.8-1.3-10.7-3.6-62.4-37.6-135-39.2-206.7-24.5-3.9 1-9 2.6-11.9 2.6-9.7 0-15.8-7.7-15.8-15.8 0-10.3 6.1-15.2 13.6-16.8 81.9-18.1 165.6-16.5 237 26.2 6.1 3.9 9.7 7.4 9.7 16.5s-7.1 15.4-15.2 15.4zm26.9-65.6c-5.2 0-8.7-2.3-12.3-4.2-62.5-37-155.7-51.9-238.6-29.4-4.8 1.3-7.4 2.6-11.9 2.6-10.7 0-19.4-8.7-19.4-19.4s5.2-17.8 15.5-20.7c27.8-7.8 56.2-13.6 97.8-13.6 64.9 0 127.6 16.1 177 45.5 8.1 4.8 11.3 11 11.3 19.7-.1 10.8-8.5 19.5-19.4 19.5zm31-76.2c-5.2 0-8.4-1.3-12.9-3.9-71.2-42.5-198.5-52.7-280.9-29.7-3.6 1-8.1 2.6-12.9 2.6-13.2 0-23.3-10.3-23.3-23.6 0-13.6 8.4-21.3 17.4-23.9 35.2-10.3 74.6-15.2 117.5-15.2 73 0 149.5 15.2 205.4 47.8 7.8 4.5 12.9 10.7 12.9 22.6 0 13.6-11 23.3-23.2 23.3z"/></svg>'
       },
+    ],
+    proyects: [
+      {
+        name: 'Parachico Software',
+        description: 'Desarrolladora de software de proyectos personales con miras a la producción de software para artesanos.',
+        logo: './public/images/white.png',
+        redirect: '#'
+      },
+      {
+        name: 'ABIB Móvil México',
+        description: 'Sistemas y aplicaciones para la administración y operación de MVO',
+        logo: 'https://abib.com.mx/assets/img/marcacion.png',
+        redirect: 'https://abib.com.mx'
+      },
+      {
+        name: 'TEECH app',
+        description: 'Aplicación web progresiva para el consumo de contenido generado por el Tribunal Electoral del Estado de Chiapas.',
+        logo: 'https://app.teechiapas.gob.mx/assets/logos/logo.svg',
+        redirect: 'https://app.teechiapas.gob.mx/'
+      },
+      {
+        name: 'TEECH CMS',
+        description: 'Gestor de archivos y contenido del Tribunal Electoral del Estado de Chiapas.',
+        logo: 'https://teechiapas.gob.mx/images/logo-teech-color.png',
+        redirect: 'https://teechiapas.gob.mx'
+      },
+      {
+        name: 'NucuTravel',
+        description: 'Plataforma web para el registro de transporte y tours en Chiapas',
+        logo: 'https://nucutravel.com/wp-content/uploads/2023/04/cropped-cropped-logo-nucu-agenciua-de.png',
+        redirect: 'https://nucutravel.com'
+      },
+      {
+        name: 'Plataforma SECTUR APP',
+        description: 'PWA para localización de hoteles y negocios asociados al RNT con busquedas tipo airbnb',
+        logo: 'https://app.plataformasecturchiapas.mx/assets/img/logos/logo-horizontal.png',
+        redirect: 'https://app.plataformasecturchiapas.mx'
+      },
     ]
   };
   return init;
