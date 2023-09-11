@@ -31,7 +31,7 @@ function media(){
       {
         name: 'Parachico Software',
         description: 'Desarrolladora de software de proyectos personales con miras a la producción de software para artesanos.',
-        logo: './public/images/white.png',
+        logo: './public/images/logo.png',
         redirect: '#'
       },
       {
@@ -41,7 +41,7 @@ function media(){
         redirect: 'https://abib.com.mx'
       },
       {
-        name: 'TEECH app',
+        name: 'TEECH App',
         description: 'Aplicación web progresiva para el consumo de contenido generado por el Tribunal Electoral del Estado de Chiapas.',
         logo: 'https://app.teechiapas.gob.mx/assets/logos/logo.svg',
         redirect: 'https://app.teechiapas.gob.mx/'
@@ -63,6 +63,12 @@ function media(){
         description: 'PWA para localización de hoteles y negocios asociados al RNT con busquedas tipo airbnb',
         logo: 'https://app.plataformasecturchiapas.mx/assets/img/logos/logo-horizontal.png',
         redirect: 'https://app.plataformasecturchiapas.mx'
+      },
+      {
+        name: 'Software Electoral IEPC',
+        description: 'Multiples sistemas de información y accesso para el Instituto de Elecciones y Participación Ciudadana del estado de Chiapas',
+        logo: 'https://www.iepc-chiapas.org.mx/images/logook.png',
+        redirect: 'https://www.iepc-chiapas.org.mx'
       },
     ]
   };
