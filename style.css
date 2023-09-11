@@ -59,8 +59,9 @@ html.lenis {
 }
 
 main, section {
-  height: 100vh !important;
-  margin-top: 5em;
+  min-height: 90vh !important;
+  margin-top: 302px;
+  margin-bottom: 10vh;
 }
 
 .btn {

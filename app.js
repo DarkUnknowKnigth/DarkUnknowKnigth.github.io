@@ -70,6 +70,52 @@ function media(){
         logo: 'https://www.iepc-chiapas.org.mx/images/logook.png',
         redirect: 'https://www.iepc-chiapas.org.mx'
       },
+    ],
+    technologies: [
+      {
+        name: 'Laravel',
+        logo: 'https://laravel.com/img/logotype.min.svg'
+      },
+      {
+        name: "Angular",
+        logo: "https://angular.io/assets/images/logos/angular/logo-nav@2x.png"
+      },
+      {
+        name: "Ionic",
+        logo: "./public/images/ionic.svg"
+      },
+      {
+        name: "AlpineJS",
+        logo: "https://alpinejs.dev/alpine_long.svg"
+      },
+      {
+        name: "TailwindCSS",
+        logo: "./public/images/tailwindcss.svg"
+      },
+      {
+        name: "NestJS",
+        logo: "https://d33wubrfki0l68.cloudfront.net/e937e774cbbe23635999615ad5d7732decad182a/26072/logo-small.ede75a6b.svg"
+      },
+      {
+        name: "NodeJS",
+        logo: "https://nodejs.org/static/images/logo.svg"
+      },
+      {
+        name: "Redis",
+        logo: "./public/images/redis.svg"
+      },
+      {
+        name: "Mysql",
+        logo: "./public/images/mysql.svg"
+      },
+      {
+        name: "Python",
+        logo: "https://www.python.org/static/img/python-logo.png"
+      },
+      {
+        name: "Entre otras",
+        logo: "./public/images/stack.png"
+      },
     ]
   };
   return init;
