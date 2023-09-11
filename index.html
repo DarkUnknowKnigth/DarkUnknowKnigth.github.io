@@ -147,7 +147,7 @@
     <div class="grid grid-cols-2 md:grid-cols-3 gap-10">
       <template x-for="project in projects" :key="project.name">
         <div class="flex flex-col gap-5 p-4 items-center rounded-lg shadow-lg">
-          <div class="w-full bg-gray-300 rounded-lg">
+          <div class="w-full bg-gradient-to-t from-secondary to-pink-500 rounded-lg">
             <img class="object-contain h-48 mx-auto" :src="project.logo" alt="logo">
           </div>
           <a :href="project.redirect">
@@ -167,7 +167,7 @@
     <div class="grid grid-cols-2 md:grid-cols-3 gap-10">
       <template x-for="tech in technologies" :key="tech.name">
         <div class="flex flex-col gap-5 p-4 items-center rounded-lg shadow-lg">
-          <div class="w-full bg-gray-300 rounded-lg">
+          <div class="w-full bg-gradient-to-t from-secondary to-pink-500 rounded-lg">
             <img class="object-contain h-48 p-2 mx-auto" :src="tech.logo" alt="logo">
           </div>
           <span x-text="tech.name"></span>

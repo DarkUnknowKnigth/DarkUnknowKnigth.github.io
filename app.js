@@ -55,7 +55,7 @@ function media(){
       {
         name: 'NucuTravel',
         description: 'Plataforma web para el registro de transporte y tours en Chiapas',
-        logo: 'https://nucutravel.com/wp-content/uploads/2023/04/cropped-cropped-logo-nucu-agenciua-de.png',
+        logo: './public/images/nucu.png',
         redirect: 'https://nucutravel.com'
       },
       {
