@@ -59,6 +59,7 @@ html.lenis {
 }
 
 main, section {
+  padding: 10px;
   min-height: 90vh !important;
   margin-top: 302px;
   margin-bottom: 10vh;
