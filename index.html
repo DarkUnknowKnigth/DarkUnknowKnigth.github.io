@@ -59,7 +59,7 @@
             Volver
           </span>
       </a>
-      <ul x-show="showing" class="flex bold flex-col md:flex-row  gap-5 max-w-7xl mx-auto items-center justify-between nav-links text-secondary">
+      <ul x-show="showing" x-on:click="toggle()" class="flex bold flex-col md:flex-row  gap-5 max-w-7xl mx-auto items-center justify-between nav-links text-secondary">
         <li><a href="#">Inicio</a></li>
         <li><a href="#about">Sobre mi</a></li>
         <li><a href="#projects">Proyectos</a></li>
@@ -129,7 +129,7 @@
   <section class="font-bold max-w-7xl mx-auto" id="about">
     <div class="md:flex-row gap-10 flex-col flex items-center justify-center">
       <div class="flex flex-col gap-5 text-center items-center">
-        <h2 class="text-primary text-4xl">Sobre mi</h2>
+        <h2 class="text-primary text-4xl pt-40">Sobre mi</h2>
         <code lang="javascript" class="p-4 bg-gray-800 text-left rounded-lg shadow-lg text-white w-full text-xl">
           {
             <div class="px-4">
@@ -164,13 +164,13 @@
   </section>
   <section class="font-bold max-w-7xl mx-auto my-auto" id="projects">
     <div class="flex flex-col">
-      <h2 class="text-primary text-4xl">Proyectos</h2>
+      <h2 class="text-primary text-4xl pt-40">Proyectos</h2>
       <p class="text-xl py-4">
         Cuento con experiencia en de trabajo en diversos frameworks y tecnologias. Los mas destacados son Laravel, NestJS, Ionic, Angular, Flask, Alpine.js, Tailwindcss, LeafletJS entre otros.Trabajo con la tecnologia adecuada al entorno y presupuesto de los clientes la herramienta correcta para el trabajo indicado, he realizado configuraciones de entornos linux como Ubuntu, Centos, Mint y Administradores como PLESK, Cpanel ademas de integrando procesos de CD/CI como github webhooks, Docker. Desarrollando arquitecturas orientadas a microservicios. Tembien cuento con experiencia en integracion de pasarelas de pago como Conekta, MercadoPago, Openpay, STP entre otras librerias.
       </p>
     </div>
     <h3 class="text-primary text-3xl">Cartera de proyectos</h3>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
       <template x-for="project in projects" :key="project.name">
         <div class="flex flex-col gap-5 p-4 items-center rounded-lg shadow-lg">
           <div class="w-full bg-gradient-to-t from-secondary  p-4 to-gray-100 rounded-lg">
@@ -187,10 +187,10 @@
   </section>
   <section class="font-bold max-w-7xl mx-auto" id="tech">
     <div class="flex flex-col gap-5">
-      <h2 class="text-primary text-4xl">Tecnologías</h2>
+      <h2 class="text-primary text-4xl pt-40">Tecnologías</h2>
       <p>Estas son algunas tecnologías utilizadas en proyectos</p>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
       <template x-for="tech in technologies" :key="tech.name">
         <div class="flex flex-col gap-5 p-4 items-center rounded-lg shadow-lg">
           <div class="w-full bg-gradient-to-t from-primary to-gray-100 rounded-lg">
@@ -203,7 +203,7 @@
   </section>
   <section class="font-bold max-w-7xl mx-auto" id="articles">
     <div class="flex flex-col gap-5">
-      <h2 class="text-primary text-4xl">Artículos</h2>
+      <h2 class="text-primary text-4xl pt-40">Artículos</h2>
       <p>Estos son algunos articulos interesantes sobre tecnología</p>
     </div>
     <ul>
@@ -214,12 +214,12 @@
   </section>
   <section id="contact">
     <div class="flex flex-col gap-5">
-      <h2 class="text-primary text-4xl">Envia un correo</h2>
+      <h2 class="text-primary text-4xl pt-40">Contacto</h2>
       <p>Ponte en contacto y solicita información sobre software o soluciones para tu empresa, inicia teniendo presencia en la web</p>
     </div>
     <ul>
       <li>
-        <a class="btn" href="mailto://dany.0525.jmo@gmail.com">Correo</a>
+        <a class="btn" href="mailto://dany.0525.jmo@gmail.com">Enviar Correo</a>
       </li>
     </ul>
   </section>
