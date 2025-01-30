@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Parachico Software</title>
+  <title>ISC. JOSE DANIEL MORALES OCAMPO</title>
   <!-- SEO -->
   <meta name="description" content="Soluciones de software modernas e inovadores con las mejores tecnologías, especializados en sistemas de información y ventas en línea.">
   <meta name="keywords" content="Soluciones de software, Desarrollo de software, empresas, innovación, innovacion, angular, ionic, desarrolladores web, web, PWA, aplicaciones web progresivas, laravel, sistemas en laravel, soporte laravel, plesk, soporte plesk, ayuda con computadoras, no se abrir word, se trabo mi comupadora, vos hija, pozol, artesanias, software de ventas, ventas en linea, altan, software para MVO altan">
   <meta name="author" content="Jose Daniel Morales Ocampo">
   <!-- end seo -->
   <!-- Twitter Card data -->
-  <meta name="twitter:card" content="Parachico Software">
+  <meta name="twitter:card" content="ISC. JOSE DANIEL MORALES OCAMPO">
   <meta name="twitter:site" content="@Parachico Software">
   <meta name="twitter:title" content="Parachico Software">
   <meta name="twitter:description" content="Soluciones de software modernas e inovadores con las mejores tecnologías, especializados en sistemas de información y ventas en línea.">
@@ -18,7 +18,7 @@
   <!-- twiter -->
   <meta name="twitter:image" content="/public/images/logo.png">
   <!-- Open Graph data -->
-  <meta property="og:title" content="Parachico Software">
+  <meta property="og:title" content="ISC. JOSE DANIEL MORALES OCAMPO">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://darkunknowknigth.github.io">
   <meta property="og:image" content="/public/images/logo.png">
@@ -38,19 +38,45 @@
   <script src="./app.js"></script>
   <link rel="stylesheet" href="./style.css">
 </head>
-<body x-data="media()">
-  <nav class="sticky top-0 bg-white shadow-lg mb-10 flex md:flex-row mx-auto flex-col justify-between items-center gap-5 px-10 py-4 z-40">
-    <a href="#inicio">
-      <img src="./public/images/logo.png" alt="logo" class="h-20 rounded-full">
+<body x-data="media()" class="p-4">
+  <nav class="sticky top-0 bg-white shadow-lg mb-10 flex mx-auto flex-row justify-between items-center gap-5 px-10 py-4 z-40">
+    <a class="hidden md:flex" href="#inicio">
+      Inicio
     </a>
-    <ul class="flex bold flex-col md:flex-row  gap-5 max-w-7xl mx-auto items-center justify-between nav-links text-secondary">
-      <li><a href="#about">Sobre mi</a></li>
-      <li><a href="#projects">Proyectos</a></li>
-      <li><a href="#tech">Tenologías</a></li>
-      <li><a href="#articles">Articulos</a></li>
-      <li><a href="#contact">Contacto</a></li>
-    </ul>
-    <a href="#contacto" class="bg-primary hover:bg-white hover:text-gray-900 hover:border hover:border-primary text-white px-4 py-4 rounded-lg font-bold uppercase">Contactar</a>
+    <!-- Mobile -->
+    <div class="md:hidden flex flex-col gap-5 items-center justify-center">
+      <a x-on:click="toggle()" class="text-secondary font-bold cursor-pointer">
+          <span class="flex flex-row gap-2" x-show="!showing">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+            </svg>            
+            Menu
+          </span>
+          <span class="flex flex-row gap-2" x-show="showing">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>            
+            Volver
+          </span>
+      </a>
+      <ul x-show="showing" class="flex bold flex-col md:flex-row  gap-5 max-w-7xl mx-auto items-center justify-between nav-links text-secondary">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#about">Sobre mi</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#tech">Tenologías</a></li>
+        <li><a href="#articles">Articulos</a></li>
+      </ul>
+    </div>
+    <!-- web -->
+    <div class="hidden rounded-b-lg md:flex flex-col items-center justify-center">
+      <ul class="flex bold flex-col md:flex-row  gap-5 max-w-7xl mx-auto items-center justify-between nav-links text-secondary">
+        <li><a href="#about">Sobre mi</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#tech">Tenologías</a></li>
+        <li><a href="#articles">Articulos</a></li>
+      </ul>
+    </div>
+    <a x-show="!showing" href="#contact" class="bg-primary hover:bg-white hover:text-gray-900 hover:border hover:border-primary text-white px-4 py-4 rounded-lg font-bold uppercase">Contactar</a>
   </nav>
   <main class="mt-10" id="inicio">
     <div class="max-w-7xl mx-auto items-center">
@@ -104,7 +130,7 @@
     <div class="md:flex-row gap-10 flex-col flex items-center justify-center">
       <div class="flex flex-col gap-5 text-center items-center">
         <h2 class="text-primary text-4xl">Sobre mi</h2>
-        <code lang="javascript" class="p-4 bg-secondary text-left rounded-lg shadow-lg text-primary w-full text-xl">
+        <code lang="javascript" class="p-4 bg-gray-800 text-left rounded-lg shadow-lg text-white w-full text-xl">
           {
             <div class="px-4">
               <br>
@@ -147,7 +173,7 @@
     <div class="grid grid-cols-2 md:grid-cols-3 gap-10">
       <template x-for="project in projects" :key="project.name">
         <div class="flex flex-col gap-5 p-4 items-center rounded-lg shadow-lg">
-          <div class="w-full bg-gradient-to-t from-secondary to-pink-500 rounded-lg">
+          <div class="w-full bg-gradient-to-t from-secondary  p-4 to-gray-100 rounded-lg">
             <img class="object-contain h-48 mx-auto" :src="project.logo" alt="logo">
           </div>
           <a :href="project.redirect">
@@ -167,7 +193,7 @@
     <div class="grid grid-cols-2 md:grid-cols-3 gap-10">
       <template x-for="tech in technologies" :key="tech.name">
         <div class="flex flex-col gap-5 p-4 items-center rounded-lg shadow-lg">
-          <div class="w-full bg-gradient-to-t from-secondary to-pink-500 rounded-lg">
+          <div class="w-full bg-gradient-to-t from-primary to-gray-100 rounded-lg">
             <img class="object-contain h-48 p-2 mx-auto" :src="tech.logo" alt="logo">
           </div>
           <span x-text="tech.name"></span>
@@ -178,11 +204,22 @@
   <section class="font-bold max-w-7xl mx-auto" id="articles">
     <div class="flex flex-col gap-5">
       <h2 class="text-primary text-4xl">Artículos</h2>
-      <p>Estos son algunos artuculos interesantes sobre tecnología</p>
+      <p>Estos son algunos articulos interesantes sobre tecnología</p>
     </div>
     <ul>
       <li>
         <a href="https://medium.com/@dany.0525.jmo/alpinejs-algo-que-debes-conocer-69f4042966b4">Mi articulo sobre alpineJS</a>
+      </li>
+    </ul>
+  </section>
+  <section id="contact">
+    <div class="flex flex-col gap-5">
+      <h2 class="text-primary text-4xl">Envia un correo</h2>
+      <p>Ponte en contacto y solicita información sobre software o soluciones para tu empresa, inicia teniendo presencia en la web</p>
+    </div>
+    <ul>
+      <li>
+        <a href="mailto://dany.0525.jmo@gmail.com">Correo</a>
       </li>
     </ul>
   </section>

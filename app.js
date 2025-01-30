@@ -1,5 +1,9 @@
 function media(){
   const init = {
+    showing:false,
+    toggle(){
+      this.showing = !this.showing
+    },
     socials: [
       {
         name:'Facebook',
