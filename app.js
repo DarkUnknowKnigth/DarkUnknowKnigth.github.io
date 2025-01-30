@@ -74,6 +74,12 @@ function media(){
         logo: 'https://www.iepc-chiapas.org.mx/images/logook.png',
         redirect: 'https://www.iepc-chiapas.org.mx'
       },
+      {
+        name: 'PWA Norma Pastelerīas',
+        description: 'ERP y plataforma de compras',
+        logo: 'https://normapastelerias.com/assets/images/logo-principal.svg',
+        redirect: 'https://normapastelerias.com'
+      },
     ],
     technologies: [
       {
