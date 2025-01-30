@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body x-data="media()" class="p-4">
-  <nav class="sticky top-0 bg-white shadow-lg mb-10 flex mx-auto flex-row justify-between items-center gap-5 px-10 py-4 z-40">
+  <nav class="sticky top-0 bg-white shadow-lg mb-10 flex mx-auto flex-row justify-between items-center gap-5 px-10 py-4 z-40 rounded-b-lg">
     <a class="hidden md:flex" href="#inicio">
       Inicio
     </a>
@@ -173,7 +173,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
       <template x-for="project in projects" :key="project.name">
         <div class="flex flex-col gap-5 p-4 items-center rounded-lg shadow-lg">
-          <div class="w-full bg-gradient-to-t from-secondary  p-4 to-gray-100 rounded-lg">
+          <div class="w-full p-4  rounded-lg">
             <img class="object-contain h-48 mx-auto" :src="project.logo" alt="logo">
           </div>
           <a :href="project.redirect">
@@ -193,7 +193,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
       <template x-for="tech in technologies" :key="tech.name">
         <div class="flex flex-col gap-5 p-4 items-center rounded-lg shadow-lg">
-          <div class="w-full bg-gradient-to-t from-primary to-gray-100 rounded-lg">
+          <div class="w-full rounded-lg">
             <img class="object-contain h-48 p-2 mx-auto" :src="tech.logo" alt="logo">
           </div>
           <span x-text="tech.name"></span>
@@ -223,6 +223,11 @@
       </li>
     </ul>
   </section>
+  <div class="waves">
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+  </div>
   <script>
     tailwind.config = {
       theme: {
