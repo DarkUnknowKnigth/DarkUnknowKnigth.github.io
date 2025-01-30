@@ -1,0 +1,26 @@
+{
+  "devDependencies": {
+    "vite": "^6.0.11"
+  },
+  "name": "darkunknowknigth.github.io",
+  "version": "1.0.0",
+  "description": "Personal Web Portfolio",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarkUnknowKnigth/DarkUnknowKnigth.github.io.git"
+  },
+  "keywords": [
+    "Daniel",
+    "Morales"
+  ],
+  "author": "Daniel Morales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DarkUnknowKnigth/DarkUnknowKnigth.github.io/issues"
+  },
+  "homepage": "https://github.com/DarkUnknowKnigth/DarkUnknowKnigth.github.io#readme"
+}
