@@ -69,8 +69,14 @@ function media(){
         redirect: 'https://app.plataformasecturchiapas.mx'
       },
       {
+        name: 'SIAR',
+        description: 'Sistena de registro de representantes de partidos políticos y candidatos independientes',
+        logo: 'https://www.iepc-chiapas.org.mx/images/logook.png',
+        redirect: 'https://www.iepc-chiapas.org.mx'
+      },
+      {
         name: 'Software Electoral IEPC',
-        description: 'Multiples sistemas de información y accesso para el Instituto de Elecciones y Participación Ciudadana del estado de Chiapas',
+        description: 'Multiples sistemas de información y gestión de procesos para el Instituto de Elecciones y Participación Ciudadana del estado de Chiapas',
         logo: 'https://www.iepc-chiapas.org.mx/images/logook.png',
         redirect: 'https://www.iepc-chiapas.org.mx'
       },
@@ -79,6 +85,12 @@ function media(){
         description: 'ERP y plataforma de compras',
         logo: 'https://normapastelerias.com/assets/images/logo-principal.svg',
         redirect: 'https://normapastelerias.com'
+      },
+      {
+        name: 'Sistemas SAPAM',
+        description: 'ERP y app de clientes para la administracion de agua potable',
+        logo: 'https://innovate-c.com/logo.png',
+        redirect: 'https://inovate-c.com'
       },
     ],
     technologies: [
