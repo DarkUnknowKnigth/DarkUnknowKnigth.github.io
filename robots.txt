@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://darkunknowknigth.github.io/sitemap.xml
