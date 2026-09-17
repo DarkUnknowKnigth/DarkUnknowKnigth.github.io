@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flux Orbit | Defiende el Núcleo</title>
+    <meta name="description"
+        content="Protege el núcleo en este frenético arcade estilo Tron. Cambios de color, velocidad y órbita te pondrán a prueba.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --neon-cyan: #00e5ff;
+            --neon-pink: #ff007f;
+            --neon-yellow: #ffea00;
+            --bg-color: #060913;
+            --grid-color: rgba(0, 229, 255, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--bg-color);
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Animated Grid Background */
+        .grid-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            perspective: 600px;
+            z-index: -1;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #111a30 0%, var(--bg-color) 70%);
+        }
+
+        .grid {
+            position: absolute;
+            width: 200vw;
+            height: 200vh;
+            left: -50vw;
+            top: 0;
+            background-image:
+                linear-gradient(var(--grid-color) 2px, transparent 2px),
+                linear-gradient(90deg, var(--grid-color) 2px, transparent 2px);
+            background-size: 60px 60px;
+            transform: rotateX(70deg) translateY(-100px) translateZ(-200px);
+            animation: moveGrid 8s linear infinite;
+        }
+
+        @keyframes moveGrid {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 0 60px;
+            }
+        }
+
+        /* Hero Section */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: transparent;
+            -webkit-text-stroke: 2px var(--neon-cyan);
+            text-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
+            margin-bottom: 10px;
+            animation: neonFlicker 3s infinite alternate;
+        }
+
+        @keyframes neonFlicker {
+
+            0%,
+            19%,
+            21%,
+            23%,
+            25%,
+            54%,
+            56%,
+            100% {
+                text-shadow:
+                    0 0 10px #fff,
+                    0 0 20px #fff,
+                    0 0 30px var(--neon-cyan),
+                    0 0 40px var(--neon-cyan),
+                    0 0 70px var(--neon-cyan),
+                    0 0 80px var(--neon-cyan),
+                    0 0 100px var(--neon-cyan);
+                -webkit-text-stroke: 0px transparent;
+                color: #fff;
+            }
+
+            20%,
+            24%,
+            55% {
+                text-shadow: none;
+                -webkit-text-stroke: 2px var(--neon-cyan);
+                color: transparent;
+            }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #a0aec0;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Game Simulation Animation */
+        .simulation-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .core {
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #fff, 0 0 60px var(--neon-cyan);
+            z-index: 10;
+            animation: corePulse 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes corePulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 20px #fff, 0 0 40px var(--neon-cyan);
+            }
+
+            100% {
+                transform: scale(1.1);
+                box-shadow: 0 0 30px #fff, 0 0 80px var(--neon-cyan);
+            }
+        }
+
+        .orbit {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(0, 229, 255, 0.4);
+            animation: spin linear infinite;
+        }
+
+        .orbit-1 {
+            width: 140px;
+            height: 140px;
+            animation-duration: 3s;
+        }
+
+        .orbit-2 {
+            width: 220px;
+            height: 220px;
+            animation-duration: 5s;
+            animation-direction: reverse;
+            border-color: rgba(255, 0, 127, 0.4);
+        }
+
+        .orbit-3 {
+            width: 300px;
+            height: 300px;
+            animation-duration: 7s;
+            border-color: rgba(255, 234, 0, 0.3);
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .orb-player {
+            width: 20px;
+            height: 20px;
+            background: var(--neon-cyan);
+            box-shadow: 0 0 15px var(--neon-cyan), 0 0 30px var(--neon-cyan);
+        }
+
+        .orb-enemy {
+            width: 18px;
+            height: 18px;
+            background: var(--neon-pink);
+            box-shadow: 0 0 15px var(--neon-pink), 0 0 30px var(--neon-pink);
+            top: auto;
+            bottom: -9px;
+        }
+
+        .orb-yellow {
+            width: 16px;
+            height: 16px;
+            background: var(--neon-yellow);
+            box-shadow: 0 0 15px var(--neon-yellow), 0 0 30px var(--neon-yellow);
+            top: 50%;
+            left: -8px;
+            transform: translateY(-50%);
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 50px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--bg-color);
+            background: var(--neon-cyan);
+            text-decoration: none;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+
+        .cta-btn:hover {
+            box-shadow: 0 0 40px var(--neon-cyan), 0 0 60px var(--neon-cyan);
+            transform: translateY(-3px) scale(1.02);
+            color: #000;
+            background: #fff;
+        }
+
+        .cta-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 20px;
+            background: rgba(6, 9, 19, 0.85);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(0, 229, 255, 0.2);
+            position: relative;
+        }
+
+        .features h2 {
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 60px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--neon-cyan);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:nth-child(2)::before {
+            background: var(--neon-pink);
+        }
+
+        .feature-card:nth-child(3)::before {
+            background: var(--neon-yellow);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--neon-cyan);
+        }
+
+        .feature-card:nth-child(2) h3 {
+            color: var(--neon-pink);
+        }
+
+        .feature-card:nth-child(3) h3 {
+            color: var(--neon-yellow);
+        }
+
+        .feature-card p {
+            color: #b0c4de;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: #04060d;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #6a7c92;
+        }
+
+        .controls-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            color: #8898aa;
+        }
+
+        .controls-info span {
+            padding: 5px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Animated Grid Background -->
+    <div class="grid-container">
+        <div class="grid"></div>
+    </div>
+
+    <!-- Hero Header -->
+    <header>
+        <h1 class="title">Flux Orbit</h1>
+        <p class="subtitle">Defiende el Núcleo. Sobrevive al Caos.</p>
+
+        <div class="simulation-container">
+            <div class="core"></div>
+            <div class="orbit orbit-1">
+                <div class="orb orb-player"></div>
+            </div>
+            <div class="orbit orbit-2">
+                <div class="orb orb-enemy"></div>
+            </div>
+            <div class="orbit orbit-3">
+                <div class="orb orb-yellow"></div>
+            </div>
+        </div>
+
+        <a href="https://play.google.com/store/apps/details?id=com.fluxorbit" class="cta-btn">Jugar Ahora</a>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Mecánicas de Juego</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>Órbitas Dinámicas</h3>
+                <p>Desliza para cambiar entre diferentes niveles de órbita. Esquiva obstáculos y ajusta tu posición
+                    estratégicamente alrededor del núcleo central.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Sincronía de Color</h3>
+                <p>Toca la pantalla para cambiar el color de tu orbe defensor. ¡Debes coincidir con el color del enemigo
+                    para absorber su impacto y proteger el núcleo!</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Boost de Velocidad</h3>
+                <p>Mantén presionado para acelerar tu órbita. Usa el impulso para alcanzar amenazas lejanas o escapar de
+                    situaciones imposibles en fracciones de segundo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="controls-info">
+            <span>TAP: Cambiar Color</span>
+            <span>HOLD: Boost</span>
+            <span>SWIPE: Cambiar Órbita (Arriba/Abajo)</span>
+        </div>
+        <p>&copy; 2026 Flux Orbit. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
